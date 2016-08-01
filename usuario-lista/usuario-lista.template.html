@@ -3,3 +3,19 @@
 <a href="#!/usuario/-1">Novo</a>
 <button ng-click="$ctrl.paginaDetalheUsuario">Novo</button>
 <br><p>{{$ctrl.tx_teste}}</p>
+<table>
+	<thead>
+		<th align="left">Codigo</th>
+		<th align="left">Nome</th>
+		<th align="left">Login</th>
+		<th>Ações</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="usuario in $ctrl.dados">
+			<td>{{usuario.CODIGO}}</td>
+			<td>{{usuario.nome}}</td>
+			<td>{{usuario.login}}</td>
+			<td><a href="#!/usuario/{{usuario.CODIGO}}">Editar</a></td>
+		</tr>
+	</tbody>
+</table>

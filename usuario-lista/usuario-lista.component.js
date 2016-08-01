@@ -8,9 +8,9 @@ angular.
         self.orderProp = 'age';
         self.tx_teste = 'lalala 123';
 
-        /*$http.get('phones/phones.json').then(function(response) {
-          self.phones = response.data;
-        });*/
+        $http.get('http://localhost:8080/rest-API/usuario').then(function(response) {
+          self.dados = response.data;
+        });
 
         self.paginaDetalheUsuario = function() {
           window.location = '#!/usuario/-2';
