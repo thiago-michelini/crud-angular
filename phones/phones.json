@@ -1,0 +1,44 @@
+[
+  {
+    "age": 13,
+    "id": "motorola-defy-with-motoblur",
+    "name": "Motorola DEFY with MOTOBLUR",
+    "snippet": "Are you ready for everything life throws your way?",
+    "imageUrl": "http://angular.github.io/angular-phonecat/step-8/app/img/phones/motorola-xoom.0.jpg"
+  },
+  {
+    "age": 11,
+    "id": "motorola-defy-with-wifi",
+    "name": "MOTOROLA XOOM",
+    "snippet": "Are you ready for everything life throws your way?",
+    "imageUrl": "http://angular.github.io/angular-phonecat/step-8/app/img/phones/dell-streak-7.0.jpg"
+  },
+  {
+    "age": 9,
+    "id": "motorola-g",
+    "name": "MOTOROLA G",
+    "snippet": "Are you ready for everything life throws your way?",
+    "imageUrl": "http://angular.github.io/angular-phonecat/step-8/app/img/phones/samsung-gem.0.jpg"
+  },
+  {
+    "age": 1,
+    "id": "apple",
+    "name": "Apple IPhone",
+    "snippet": "Are you ready for everything life throws your way?",
+    "imageUrl": "http://angular.github.io/angular-phonecat/step-8/app/img/phones/nexus-s.0.jpg"
+  },
+  {
+    "age": 3,
+    "id": "samsung",
+    "name": "Samsung J7",
+    "snippet": "Are you ready for everything life throws your way?",
+    "imageUrl": "http://angular.github.io/angular-phonecat/step-8/app/img/phones/lg-axis.0.jpg"
+  },
+  {
+    "age": 5,
+    "id": "elephone",
+    "name": "Elephone S2",
+    "snippet": "Are you ready for everything life throws your way?",
+    "imageUrl": "http://angular.github.io/angular-phonecat/step-8/app/img/phones/t-mobile-g2.0.jpg"
+  }
+]
