@@ -19,17 +19,23 @@ angular.
         }
 
         self.gravar = function gravar() {
-          $http.post('http://localhost:8080/rest-API/usuario', self.usuarioModel)
+          httpMethod = (self.usuarioModel.CODIGO != null) ? 'PUT' : 'POST';
+          $http({
+            method: httpMethod,
+            url: 'http://localhost:8080/rest-API/usuario',
+            data: self.usuarioModel
+          })
           .success(function(response) {
-              self.usuarioModel.CODIGO = response.CODIGO;
-          });
+            self.usuarioModel.CODIGO = response.CODIGO;
+            window.location = '#!/usuario';
+          })
+          .error(function(erro) {
+            alert('erro: ' + erro);
+          })
         }
       }
     ]
   });
-
-
-
 /*xmlhttp = new XMLHttpRequest();
 xmlhttp.open(
     "POST",

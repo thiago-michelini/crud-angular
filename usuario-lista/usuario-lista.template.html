@@ -1,7 +1,6 @@
 
 <input ng-model="$ctrl.tx_teste">
-<a href="#!/usuario/-1">Novo</a>
-<button ng-click="$ctrl.paginaDetalheUsuario">Novo</button>
+<button ng-click="$ctrl.novo()">Novo</button>
 <br><p>{{$ctrl.tx_teste}}</p>
 <table>
 	<thead>
@@ -15,7 +14,10 @@
 			<td>{{usuario.CODIGO}}</td>
 			<td>{{usuario.nome}}</td>
 			<td>{{usuario.login}}</td>
-			<td><a href="#!/usuario/{{usuario.CODIGO}}">Editar</a></td>
+			<td>
+				<button ng-click="$ctrl.editar(usuario.CODIGO)">Editar</a>
+				<button ng-click="$ctrl.excluir(usuario.CODIGO)">Excluir</button>
+			</td>
 		</tr>
 	</tbody>
 </table>
