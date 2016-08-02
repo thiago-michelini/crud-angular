@@ -1,23 +1,42 @@
-
-<input ng-model="$ctrl.tx_teste">
-<button ng-click="$ctrl.novo()">Novo</button>
-<br><p>{{$ctrl.tx_teste}}</p>
-<table>
-	<thead>
-		<th align="left">Codigo</th>
-		<th align="left">Nome</th>
-		<th align="left">Login</th>
-		<th>Ações</th>
-	</thead>
-	<tbody>
-		<tr ng-repeat="usuario in $ctrl.dados">
-			<td>{{usuario.CODIGO}}</td>
-			<td>{{usuario.nome}}</td>
-			<td>{{usuario.login}}</td>
-			<td>
-				<button ng-click="$ctrl.editar(usuario.CODIGO)">Editar</a>
-				<button ng-click="$ctrl.excluir(usuario.CODIGO)">Excluir</button>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<div style="padding:0 15px 0 15px">
+	<div class="row">
+		<div class="input-field col s6">
+			<input type="text" id="tx_filtro" ng-model="$ctrl.tx_filtro" class="validate">
+			<label for="tx_filtro">Filtrar</label>
+		</div>
+		<div class="col s6"></div>
+	</div>
+	<button class="waves-effect waves-light btn" ng-click="$ctrl.novo()">
+		<i class="material-icons left">library_add</i>Novo</button>
+	<div class="row">
+		<div class="col s12">
+			<table class="bordered highlight">
+				<thead>
+					<tr>
+						<th data-field="id">Codigo</th>
+						<th data-field="nome">Nome</th>
+						<th data-field="login">Login</th>
+						<th data-field="acoes">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="usuario in $ctrl.dados | filter:$ctrl.tx_filtro">
+						<td>{{usuario.CODIGO}}</td>
+						<td>{{usuario.nome}}</td>
+						<td>{{usuario.login}}</td>
+						<td>
+							<button class="btn-floating btn waves-effect waves-light blue darken-2" ng-click="$ctrl.editar(usuario.CODIGO)"
+								alt="Editar registro" title="Editar registro">
+								<i class="material-icons">edit</i>
+							</button>
+							<button class="btn-floating btn waves-effect waves-light red" ng-click="$ctrl.excluir(usuario.CODIGO)"
+								alt="Deletar registro" title="Deletar registro">
+								<i class="material-icons">remove</i>
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

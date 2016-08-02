@@ -5,8 +5,8 @@ angular.
     controller: ['$http','$location',
       function UsuarioListaController($http, $location) {
         var self = this;
-        self.orderProp = 'age';
-        self.tx_teste = 'lalala 123';
+        //self.orderProp = 'age';
+        //self.tx_filtro = 'lalala 123';
 
         self.loadInicial = function() {
           $http.get('http://localhost:8080/rest-API/usuario').then(function(response) {
@@ -39,6 +39,7 @@ angular.
 
         self.editar = function(codigo) {
           window.location = '#!/usuario/' + codigo;
+          //$location.url('#!/usuario/' + codigo);
         }
       }
     ]
