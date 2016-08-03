@@ -1,29 +1,4 @@
-<!--h1>Usuários</h1>
-<button ng-click="$ctrl.gravar()">Gravar</button>
-<div>
-	<div style="float:left;padding:20px 20px 0 0">
-		<label style="display:block">Código</label>
-		<input disabled="disabled" size="5" ng-model="$ctrl.usuarioModel.CODIGO"/>
-	</div>
-	<div style="padding:20px 0 0 0">
-		<label style="display:block">Nome</label>
-		<input size="35" ng-model="$ctrl.usuarioModel.nome"/>
-	</div>
-	<div style="float:left;padding:20px 20px 0 0">
-		<label style="display:block">Login</label>
-		<input ng-model="$ctrl.usuarioModel.login"/>
-	</div>
-	<div style="padding:20px 0 0 0">
-		<label style="display:block">Senha</label>
-		<input type="password" ng-model="$ctrl.usuarioModel.senha"/>
-	</div>
-	<div style="float:left;padding:20px 20px 0 0">
-		<label style="display:block">CPF</label>
-		<input ng-model="$ctrl.usuarioModel.cpf"/>
-	</div>
-</div-->
-
-<h3>Formulário de Usuários</h3>
+<h3 style="color:#26a69a">Formulário de Usuários</h3>
 <div class="row">
 	<div class="input-field col s2">
 		<input type="text" id="codigo" placeholder="" class="validate" disabled ng-model="$ctrl.usuarioModel.CODIGO"/>
@@ -46,10 +21,13 @@
 </div>
 <div class="row">
 	<div class="input-field col s6">
-		<input type="number" id="cpf" placeholder="Digite aqui o CPF" class="validate" ng-model="$ctrl.usuarioModel.cpf"/>
+		<input type="text" id="cpf" placeholder="Digite aqui o CPF" class="validate" ng-model="$ctrl.usuarioModel.cpf"/>
 		<label for="cpf" class="active" data-error="O CPF deve conter apenas números">CPF:</label>
 	</div>
-	<div class="input-field col s6"></div>
+	<div class="input-field col s6">
+		<input type="email" id="email" placeholder="Digite aqui o Email" class="validate"/>
+		<label for="email" class="active" data-error="O email informado é inválido!">Email:</label>
+	</div>
 </div>
 <button class="waves-effect waves-light btn" ng-click="$ctrl.gravar()">
 		<i class="material-icons left">done</i>Gravar</button>

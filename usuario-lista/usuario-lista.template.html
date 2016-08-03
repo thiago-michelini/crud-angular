@@ -8,15 +8,16 @@
 	</div>
 	<button class="waves-effect waves-light btn" ng-click="$ctrl.novo()">
 		<i class="material-icons left">library_add</i>Novo</button>
-	<div class="row">
-		<div class="col s12">
+	<!--div class="row">
+		<div class="col s12"-->
 			<table class="bordered highlight">
 				<thead>
 					<tr>
 						<th data-field="id">Codigo</th>
 						<th data-field="nome">Nome</th>
 						<th data-field="login">Login</th>
-						<th data-field="acoes">Ações</th>
+						<th data-field="cpf">CPF</th>
+						<th style="text-align:center" data-field="acoes">Ações</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -24,19 +25,20 @@
 						<td>{{usuario.CODIGO}}</td>
 						<td>{{usuario.nome}}</td>
 						<td>{{usuario.login}}</td>
-						<td>
+						<td>{{usuario.cpf}}</td>
+						<td style="text-align:center">
 							<button class="btn-floating btn waves-effect waves-light blue darken-2" ng-click="$ctrl.editar(usuario.CODIGO)"
-								alt="Editar registro" title="Editar registro">
+								alt="Editar o usuário {{usuario.nome}}" title="Editar o usuário {{usuario.nome}}">
 								<i class="material-icons">edit</i>
 							</button>
 							<button class="btn-floating btn waves-effect waves-light red" ng-click="$ctrl.excluir(usuario.CODIGO)"
-								alt="Deletar registro" title="Deletar registro">
+								alt="Deletar o usuário {{usuario.nome}}" title="Deletar o usuário {{usuario.nome}}">
 								<i class="material-icons">remove</i>
 							</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
-		</div>
-	</div>
+		<!--/div>
+	</div-->
 </div>
