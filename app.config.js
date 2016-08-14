@@ -1,8 +1,8 @@
 'use strict';
 
 var NOME_APLICACAO = 'CRUD Angular com Microservice';
-
-var loc = window.location;
+var urlBasePortal = window.location.protocol + '//' + window.location.host + '/portal';
+var DEPENDENCIA_MATERIALIZE = false;
 
 angular.
   module('crudUsuarioApp').
@@ -25,11 +25,11 @@ angular.
 
 function checarSessaoUsuario() {
   if (!localStorage.getItem('tnd-user-session')) {
-    var urlLogin = loc.protocol + '//' + loc.host + '/portal?redirect=' + loc.protocol + '//' + loc.host + '/crud-angular';
+    var urlLogin = urlBasePortal + '?redirect=' + window.location.protocol + '//' + window.location.host + '/crud-angular';
     window.location = urlLogin;
   }
 }
 
 $(function(){
-  $('<script src="' + loc.protocol + '//' + loc.host + '/portal/js/header-apps.js"></script>').insertAfter($('#app-config-js'));
+  $('<script src="' + urlBasePortal + '/js/header-apps.js"></script>').insertAfter($('#app-config-js'));
 });
