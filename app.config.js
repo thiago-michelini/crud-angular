@@ -2,7 +2,6 @@
 
 var NOME_APLICACAO = 'CRUD Angular com Microservice';
 var urlBasePortal = window.location.protocol + '//' + window.location.host + '/portal';
-var DEPENDENCIA_MATERIALIZE = false;
 
 angular.
   module('crudUsuarioApp').
@@ -31,5 +30,6 @@ function checarSessaoUsuario() {
 }
 
 $(function(){
+  //insere o JS que monta o Header de aplicacoes, que serah comum para todas as APPS
   $('<script src="' + urlBasePortal + '/js/header-apps.js"></script>').insertAfter($('#app-config-js'));
 });
