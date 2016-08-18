@@ -31,7 +31,7 @@ angular.
 
         self.gravar = function gravar() {
           atribuirValorDeSelectsAoModel(self);
-          
+
           httpMethod = (self.usuarioModel.CODIGO != null) ? 'PUT' : 'POST';
           $http({
             method: httpMethod,

@@ -61,14 +61,14 @@ function atribuirValorDeSelectsAoModel(self) {
 				var valueOption = Number($(this).val());
 
 				if(isNaN(valueOption)){
-				valueOption = $(this).val();
+					valueOption = $(this).val();
 				}
 
 				if(typeof objToSet == 'undefined'){
-				//cria o atributo no objeto e seta o valor
-				objSelf[objsSelf[1]] = valueOption;
+					//cria o atributo no objeto e seta o valor
+					objSelf[objsSelf[1]] = valueOption;
 				}else{
-				objToSet = valueOption;
+					objToSet = valueOption;
 				}
 			}
 		});
