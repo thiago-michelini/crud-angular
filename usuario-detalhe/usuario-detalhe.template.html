@@ -32,13 +32,13 @@
 	</div>
 	<div class="row">
 		<div class="input-field col s12 m6">
-		    <select>
-		      <option value="" disabled selected>Choose your option</option>
-		      <option value="1">Option 1</option>
-		      <option value="2">Option 2</option>
-		      <option value="3">Option 3</option>
+		    <select id="select1" ng-model="$ctrl.usuarioModel.tipoUsuario">
+		      <option value="" disabled selected>Escolha o tipo do Usuario</option>
+		      <option value="0">Admin</option>
+		      <option value="1">Operador</option>
+		      <option value="2">Supervisor</option>
 		    </select>
-		    <label>Materialize Select</label>
+		    <label>Tipo Usuário</label>
 		</div>
 	</div>
 	<div class="row">

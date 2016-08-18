@@ -9,8 +9,8 @@ angular.
         //self.tx_filtro = 'lalala 123';
 
         self.loadInicial = function() {
-          $http.get('http://localhost:8080/rest-API/usuario').then(function(response) {
-            self.dados = response.data;
+          $http.get('http://192.168.41.65:8080/rest-API/usuario?nocache=' + new Date().getTime()).success(function(response) {
+            self.dados = response;
           });
         }
 
@@ -19,7 +19,7 @@ angular.
         self.excluir = function excluir(codigo) {
           $http({
             method: 'DELETE',
-            url: 'http://localhost:8080/rest-API/usuario',
+            url: 'http://192.168.41.65:8080/rest-API/usuario',
             data: {CODIGO: codigo},
             headers: {
               'Content-Type': 'application/json'

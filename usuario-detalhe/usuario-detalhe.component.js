@@ -13,7 +13,7 @@ angular.
         if (self.usuarioId != -1) {
           $http({
             method: 'GET',
-            url: 'http://localhost:8080/rest-API/usuario?id=' + self.usuarioId,
+            url: 'http://192.168.41.65:8080/rest-API/usuario?id=' + self.usuarioId,
             headers: {
               'Content-Type': 'application/json'
             }
@@ -30,19 +30,18 @@ angular.
         }
 
         self.gravar = function gravar() {
+          atribuirValorDeSelectsAoModel(self);
+          
           httpMethod = (self.usuarioModel.CODIGO != null) ? 'PUT' : 'POST';
           $http({
             method: httpMethod,
-            url: 'http://localhost:8080/rest-API/usuario',
+            url: 'http://192.168.41.65:8080/rest-API/usuario',
             data: self.usuarioModel
-          })
-          .success(function(response) {
-            self.usuarioModel.CODIGO = response.CODIGO;
+          }).success(function(response) {
             window.location = '#!/usuario';
-          })
-          .error(function(erro) {
-            alert('erro: ' + erro);
-          })
+          }).error(function(erro) {
+            console.info('Erro: ',erro);
+          });
         }
       }
     ]
