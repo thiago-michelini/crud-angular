@@ -3,44 +3,43 @@
 	<div class="row">
 		<div class="input-field col s2">
 			<input type="text" id="codigo" placeholder="" class="validate" disabled ng-model="$ctrl.usuarioModel.CODIGO"/>
-			<label for="codigo" class="active">Código:</label>
+			<label for="codigo">Código:</label>
 		</div>
 		<div class="input-field col s10">
 			<input type="text" id="nome" placeholder="Digite aqui o nome do usuário" class="validate" ng-model="$ctrl.usuarioModel.nome"/>
-			<label for="nome" class="active">Nome:</label>
+			<label for="nome">Nome:</label>
 		</div>
 	</div>
 	<div class="row">
 		<div class="input-field col s6">
-			<input type="text" id="login" placeholder="Digite aqui o login" class="validate" ng-model="$ctrl.usuarioModel.login"/>
-			<label for="login" class="active">Login:</label>
+			<input type="text" id="login" class="validate" ng-model="$ctrl.usuarioModel.login"/>
+			<label for="login">Login:</label>
 		</div>
 		<div class="input-field col s6">
 			<input type="password" id="senha" placeholder="Digite aqui a senha" class="validate" ng-model="$ctrl.usuarioModel.senha"/>
-			<label for="senha" class="active">Senha:</label>
+			<label for="senha">Senha:</label>
 		</div>
 	</div>
 	<div class="row">
 		<div class="input-field col s6">
 			<input type="text" id="cpf" placeholder="Digite aqui o CPF" class="validate" ng-model="$ctrl.usuarioModel.cpf"/>
-			<label for="cpf" class="active" data-error="O CPF deve conter apenas números">CPF:</label>
+			<label for="cpf" data-error="O CPF deve conter apenas números">CPF:</label>
 		</div>
 		<div class="input-field col s6">
 			<input type="email" id="email" placeholder="Digite aqui o Email" class="validate"/>
-			<label for="email" class="active" data-error="O email informado é inválido!">Email:</label>
+			<label for="email" data-error="O email informado é inválido!">Email:</label>
 		</div>
 	</div>
 	<div class="row">
 		<div class="input-field col s12 m6">
-		    <select id="select-mat">
+		    <select>
 		      <option value="" disabled selected>Choose your option</option>
 		      <option value="1">Option 1</option>
 		      <option value="2">Option 2</option>
 		      <option value="3">Option 3</option>
 		    </select>
-		    <label for="select-mat">Materialize Select</label>
+		    <label>Materialize Select</label>
 		</div>
-		<!--div class="col s6"></div-->
 	</div>
 	<div class="row">
 		<div class="col s12">

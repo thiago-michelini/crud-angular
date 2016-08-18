@@ -13,11 +13,11 @@ angular.
 
       $routeProvider.
         when('/usuario', {
-          resolve: {"check":function(){checarSessaoUsuario()}},
+          resolve: {check:checarSessaoUsuario},
           template: '<usuario-lista></usuario-lista>'
         }).
         when('/usuario/:usuarioId', {
-          resolve: {"check":function(){checarSessaoUsuario()}},
+          resolve: {check:checarSessaoUsuario},
           template: '<usuario-detalhe></usuario-detalhe>'
         }).
         otherwise('/usuario');
@@ -48,6 +48,11 @@ $(function(){
   $('<script src="' + urlBasePortal + '/js/header-apps.js"></script>').insertAfter($('#app-config-js'));
   setTimeout(inserirBotaoCustomizadoNoHeader, 5000);
 });
+
+function reloadComponentesMaterializeCSS() {
+    Materialize.updateTextFields();
+    $('select').material_select();
+}
 
 function inserirBotaoCustomizadoNoHeader() {
   var areaHeaderLogo = $('.header-apps-logo');

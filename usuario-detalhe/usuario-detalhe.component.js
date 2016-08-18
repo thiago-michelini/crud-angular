@@ -11,11 +11,22 @@ angular.
         self.usuarioModel = {};
 
         if (self.usuarioId != -1) {
-          $http
-            .get('http://localhost:8080/rest-API/usuario?id=' + self.usuarioId)
-            .then(function(response) {
-              self.usuarioModel = response.data[0];
-          });
+          $http({
+            method: 'GET',
+            url: 'http://localhost:8080/rest-API/usuario?id=' + self.usuarioId,
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+          .success(function(response) {
+            self.usuarioModel = response[0];
+            setTimeout(reloadComponentesMaterializeCSS, 300);
+          })
+          .error(function(erro) {
+            alert('erro: ' + erro);
+          })
+        } else {
+          reloadComponentesMaterializeCSS();
         }
 
         self.gravar = function gravar() {
