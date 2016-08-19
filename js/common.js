@@ -1,5 +1,3 @@
-var NOME_APLICACAO = 'CRUD Angular com Microservice';
-var urlBasePortal = window.location.protocol + '//' + window.location.host + '/portal';
 var dadosSessao = null;
 var timeoutSessao = null;
 
@@ -18,13 +16,13 @@ function checarSessaoUsuario() {
 }
 
 function redirecionarParaLogin() {
-  var urlLogin = urlBasePortal + '?redirect=' + window.location.protocol + '//' + window.location.host + '/crud-angular';
+  var urlLogin = URL_BASE_PORTAL + '?redirect=' + window.location.protocol + '//' + window.location.host + '/crud-angular';
   window.location = urlLogin;
 }
 
 $(function(){
   //insere o JS que monta o Header de aplicacoes, que serah comum para todas as APPS
-  $('<script src="' + urlBasePortal + '/js/header-apps.js"></script>').insertAfter($('#app-config-js'));
+  $('<script src="' + URL_BASE_PORTAL + '/js/header-apps.js"></script>').insertAfter($('#app-config-js'));
   setTimeout(inserirBotaoCustomizadoNoHeader, 5000);
 });
 
@@ -41,7 +39,7 @@ function inserirBotaoCustomizadoNoHeader() {
   $('<div style="width:2.8%;background:green;float:left;height:100%;cursor:pointer">c</div>').insertAfter($(areaHeaderLogo));
 }
 
-function atribuirValorDeSelectsAoModel(self) {
+/*function atribuirValorDeSelectsAoModel(self) {
 	$("select").each(function() {
 		var sel = $(this);
 		var selectLabelSelecionado = $($(sel).parent()).find('li.selected span').html();
@@ -73,4 +71,19 @@ function atribuirValorDeSelectsAoModel(self) {
 			}
 		});
 	});
+}*/
+
+function getValorSelecionadoNoSelect(select) {
+	var result = null;
+
+	var selectLabelSelecionado = $($(select).parent()).find('li.active span').html();
+
+	$($(select).find('option')).each(function() {
+		if ($(this).html() == selectLabelSelecionado) {
+			result = $(this).val();
+			return false;//equivalente ao break
+		}
+	});
+
+	return result;
 }

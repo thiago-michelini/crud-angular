@@ -32,11 +32,9 @@
 	</div>
 	<div class="row">
 		<div class="input-field col s12 m6">
-		    <select id="select1" ng-model="$ctrl.usuarioModel.tipoUsuario">
+		    <select id="select1" ng-model="$ctrl.usuarioModel.tipoUsuario"
+		    	ng-options="tipoUsuario for tipoUsuario in $ctrl.tiposUsuarios.tiposUsuario track by tipoUsuario">
 		      <option value="" disabled selected>Escolha o tipo do Usuario</option>
-		      <option value="ADMIN">Admin</option>
-		      <option value="SUPERVISOR">Supervisor</option>
-		      <option value="OPERADOR">Operador</option>
 		    </select>
 		    <label>Tipo Usuário</label>
 		</div>
