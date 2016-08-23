@@ -2,13 +2,16 @@ var dadosSessao = null;
 var timeoutSessao = null;
 
 function checarSessaoUsuario() {
-  if (!localStorage.getItem('tnd-user-session')) {
+  // if (!localStorage.getItem('tnd-user-session')) {
+  if (!getCookie('tnd-user-session')) {
     redirecionarParaLogin();
   } else {
-    dadosSessao = JSON.parse(localStorage.getItem('tnd-user-session'));
+    // dadosSessao = JSON.parse(localStorage.getItem('tnd-user-session'));
+    dadosSessao = JSON.parse(getCookie('tnd-user-session'));
     if (!timeoutSessao)
       timeoutSessao = setTimeout(function() {
-        localStorage.removeItem('tnd-user-session');
+        // localStorage.removeItem('tnd-user-session');
+        document.cookie = "tnd-user-session=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
         alert('Sua sessão expirou, favor realizar novo login!');
         redirecionarParaLogin();
       }, dadosSessao.minutosSessao * 60000);
@@ -16,7 +19,7 @@ function checarSessaoUsuario() {
 }
 
 function redirecionarParaLogin() {
-  var urlLogin = URL_BASE_PORTAL + '?redirect=' + window.location.protocol + '//' + window.location.host + '/crud-angular';
+  var urlLogin = URL_BASE_PORTAL + '?redirect=' + criarUrl('crud', '/crud-angular');
   window.location = urlLogin;
 }
 
@@ -86,4 +89,19 @@ function getValorSelecionadoNoSelect(select) {
 	});
 
 	return result;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
