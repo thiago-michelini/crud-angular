@@ -26,7 +26,7 @@ function redirecionarParaLogin() {
 $(function(){
   //insere o JS que monta o Header de aplicacoes, que serah comum para todas as APPS
   $('<script src="' + URL_BASE_PORTAL + '/js/header-apps.js"></script>').insertAfter($('#app-config-js'));
-  setTimeout(inserirBotaoCustomizadoNoHeader, 5000);
+  setTimeout(inserirBotaoCustomizadoNoHeader, 1000);
 });
 
 function reloadComponentesMaterializeCSS() {

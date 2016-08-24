@@ -1,10 +1,12 @@
+var ambientes = ['dev','int','sit','uat','local'];
 var NOME_APLICACAO = 'CRUD Angular com Microservice';
 var URL_BASE_PORTAL = criarUrl('portal', '/portal');
-var URL_RESOURCE_USUARIO = window.location.protocol + '//' + '192.168.41.65:8080/rest-API/usuario';
+var URL_BASE_RESOURCES = 'microservices.novaarquitetura.com.br';
 
-var ambientes = ['dev','int','sit','uat'];
+var URL_RESOURCE_USUARIO = window.location.protocol + '//' + URL_BASE_RESOURCES + '/rest-API/usuario';
 
 function criarUrl(app, uri) {
+	var result = app;
 	if (urlEhIp())//usuario estah usando ip para acesso a aplicacao
 		return window.location.protocol + '//' + window.location.host + uri;
 	
@@ -13,11 +15,11 @@ function criarUrl(app, uri) {
 	amb = amb.substring(0, amb.indexOf('.'));
 	$(ambientes).each(function(i, v) {
 		if (amb.indexOf(v) > -1) {
-			app = app + '-' + v + '.';
+			result += '-' + v;
 		}
 	});
 
-	return window.location.protocol + '//' + app + obterDomain();
+	return window.location.protocol + '//' + result + obterDomain();
 }
 
 function urlEhIp() {
