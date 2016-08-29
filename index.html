@@ -5,7 +5,8 @@
     <title>My HTML File</title>
     <!--link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app.css" /-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/-->
+    <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
@@ -15,10 +16,14 @@
         
         <div ng-view></div>
 
-        <script src="components/angular/angular.js"></script>
+        <!--script src="components/angular/angular.js"></script>
         <script src="components/angular-route/angular-route.js"></script>
         <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script-->
+        <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
         <script type="text/javascript" src="js/constants.js"></script>
         <script type="text/javascript" src="js/common.js"></script>
         <script src="app.module.js"></script>
