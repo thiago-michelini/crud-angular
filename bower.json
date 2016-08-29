@@ -1,0 +1,12 @@
+{
+  "name": "crud-angular",
+  "description": "Testes com AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/thiago-michelini/crud-angular",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-route": "1.5.x"
+  }
+}
