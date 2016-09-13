@@ -15,7 +15,7 @@ function checarSessaoUsuario() {
         document.cookie = "tnd-user-session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + obterDomain();
         alert('Sua sessão expirou, favor realizar novo login!');
         redirecionarParaLogin();
-      }, dadosSessao.minutosSessao * 60000);
+      }, dadosSessao.segundosSessao * 1000);
   }
 }
 
