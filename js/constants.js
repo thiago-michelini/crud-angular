@@ -1,7 +1,7 @@
 var ambientes = ['dev','int','sit','uat','local'];
 var NOME_APLICACAO = 'CRUD Angular com Microservice';
 var URL_BASE_PORTAL = criarUrl('portal', '/portal');
-var URL_BASE_RESOURCES = criarUrl('microservices', ':8080');
+var URL_BASE_RESOURCES = criarUrl('microservices', ':8081');
 
 var URL_RESOURCE_USUARIO = URL_BASE_RESOURCES + '/rest-API/usuario';
 
